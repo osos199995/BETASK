@@ -16,14 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::group([
-
-    'middleware' => 'auth',
-
-
-
-], function ($router) {
+Route::group(['middleware' => 'auth',], function () {
     Route::get('salaries','SalariesController@index')->name('salaries');
+    Route::get('month-salary','SalariesController@getMonthSalary')->name('month-salary');
+    Route::get('search-salary','SalariesController@searchSalary')->name('search-salary');
 
 
 });
